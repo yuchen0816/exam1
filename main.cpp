@@ -170,5 +170,18 @@ int main(void)
             for (i = 0.9; i > 0; i = i - 0.0011)
                 aout = i;
         }
+        if(conf == 1){
+            ADCdata[k] = ain;
+            if (k == 99){
+                for (x = 0; x < 100; x++){
+                    printf("%f\r\n", ADCdata[x]);
+                }
+                k = 0;
+                conf = 0;
+            } 
+            else {
+                k++;
+            }
+        }
     }
 }
