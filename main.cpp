@@ -9,9 +9,8 @@ DigitalIn down(A1);
 DigitalIn confirm(A2);
 int counter = 0;
 float i;
-int j;
-int x;
-int y;
+float j;
+float slew;
 float ADCdata[128];
 int conf = 0;
 int main(void)
@@ -125,6 +124,51 @@ int main(void)
             uLCD.text_height(2);
             uLCD.locate(2,6);
             uLCD.printf("1/8");
+        }
+        if(confirm==1){
+            conf = 1;
+            if(counter == 1)
+                slew = 1;
+            else if(counter == 2)
+                slew = 0.5;
+            else if(counter == 3)
+                slew = 0.25;
+            else if(counter == 4)
+                slew = 0.125;
+        }
+
+
+        if(slew==1){
+            for(i=0;i<0.9;i = i + 0.0001268)
+                aout = i;
+            for(j = 0; j < 0.9; j= j + 0.0001268)
+                aout = 0.9;
+            for (i = 0.9; i > 0; i = i - 0.0001268)
+                aout = i;
+        }
+        if(slew==0.5){
+            for(i=0;i<0.9;i = i + 0.00028)
+                aout = i;
+            for(j = 0; j < 0.9; j= j + 0.000072)
+                aout = 0.9;
+            for (i = 0.9; i > 0; i = i - 0.00028)
+                aout = i;
+        }
+        if(slew==0.25){
+            for(i=0;i<0.9;i = i + 0.00056)
+                aout = i;
+            for(j = 0; j < 0.9; j= j + 0.00006)
+                aout = 0.9;
+            for (i = 0.9; i > 0; i = i - 0.00056)
+                aout = i;
+        }
+        if(slew==0.125){
+            for(i=0;i<0.9;i = i + 0.0011)
+                aout = i;
+            for(j = 0; j < 0.9; j= j + 0.000055)
+                aout = 0.9;
+            for (i = 0.9; i > 0; i = i - 0.0011)
+                aout = i;
         }
     }
 }
