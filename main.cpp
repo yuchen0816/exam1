@@ -83,13 +83,43 @@ int main(void)
             uLCD.printf("1/8");
         }
         if(counter==3){
+            uLCD.color(BLUE);
+            uLCD.text_width(2);
+            uLCD.text_height(2);
+            uLCD.locate(2,0);
+            uLCD.printf("1");
+            uLCD.color(BLUE);
+            uLCD.text_width(2);
+            uLCD.text_height(2);
+            uLCD.locate(2,2);
+            uLCD.printf("1/2");
             uLCD.color(RED);
             uLCD.text_width(2);
             uLCD.text_height(2);
             uLCD.locate(2,4);
             uLCD.printf("1/4");
+            uLCD.color(BLUE);
+            uLCD.text_width(2);
+            uLCD.text_height(2);
+            uLCD.locate(2,6);
+            uLCD.printf("1/8");
         }
         if(counter==4){
+            uLCD.color(BLUE);
+            uLCD.text_width(2);
+            uLCD.text_height(2);
+            uLCD.locate(2,0);
+            uLCD.printf("1");
+            uLCD.color(BLUE);
+            uLCD.text_width(2);
+            uLCD.text_height(2);
+            uLCD.locate(2,2);
+            uLCD.printf("1/2");
+            uLCD.color(BLUE);
+            uLCD.text_width(2);
+            uLCD.text_height(2);
+            uLCD.locate(2,4);
+            uLCD.printf("1/4");
             uLCD.color(RED);
             uLCD.text_width(2);
             uLCD.text_height(2);
